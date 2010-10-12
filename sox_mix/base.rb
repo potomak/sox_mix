@@ -25,7 +25,7 @@ module SoxMix
         cmd << "#{track.to_cmd} "
       end
 
-      cmd << "-t mp3 #{@mix_path}"
+      cmd << "-t mp3 #{@mix_path} norm"
     end
   end
 end

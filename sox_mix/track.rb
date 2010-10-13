@@ -12,7 +12,15 @@ module SoxMix
     
       @data.each_with_index do |on, id|
         if 1 == on
-          beat_cmd = "#{SoxMix::SOX_COMMAND} -t mp3 #{@sample} -t mp3 - pad #{id*@beat}@0"
+          effects = []
+          
+          if @data[id+1] && 1 == @data[id+1]
+            effects << " trim 0 #{@beat}"
+          end
+          effects << "pad #{id*@beat}@0"
+          
+          beat_cmd = "#{SoxMix::SOX_COMMAND} -t mp3 #{@sample} -t mp3 - #{effects.join(" ")}"
+          
           cmd << "-t mp3 \"|#{beat_cmd}\" "
         end
       end

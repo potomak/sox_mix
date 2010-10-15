@@ -6,8 +6,8 @@ module SoxMix
       @tracks = []
     end
   
-    def add_track(data, sample_path)
-      @tracks << SoxMix::Track.new(@bpm, data, SoxMix::Sample.new(sample_path))
+    def add_track(data, sample_path, effects)
+      @tracks << SoxMix::Track.new(@bpm, data, SoxMix::Sample.new(sample_path), effects)
     end
   
     def run

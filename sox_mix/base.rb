@@ -2,7 +2,7 @@ module SoxMix
   class Base
     def initialize(mix_path, bpm)
       @mix_path = mix_path
-      @bpm = bpm
+      @bpm = bpm*4
       @tracks = []
     end
   

@@ -10,7 +10,7 @@ require 'sox_mix'
 # configuration
 #
 mix_path = "mix.mp3"
-mix_bpm = 240*2
+mix_bpm = 120
 samples = [
   {
     :path => "samples/808_rim.mp3",
